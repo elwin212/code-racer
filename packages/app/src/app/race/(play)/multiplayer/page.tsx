@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { raceMatchMaking } from "./loaders";
 import { getRandomSnippet } from "../loaders";
 import { createRaceParticipant } from "./actions";
+import  LeaveButton  from "../../_components/leave-button"
 
 export default async function MultiplayerRacePage({
   searchParams,
@@ -40,6 +41,7 @@ export default async function MultiplayerRacePage({
         raceId={raceToJoin?.id}
         participantId={participant.id}
       />
+      <LeaveButton participantId={participant.id} />
     </main>
   );
 }
